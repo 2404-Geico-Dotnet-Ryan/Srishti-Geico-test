@@ -4,6 +4,7 @@ class UserManagementSystem
     public string FullName { get; set; }
     public string EmailAddress { get; set; }
     public int PhoneNumber { get; set; }
+    public bool PasswordActive { get; set;}
 
 
     public UserManagementSystem()
@@ -12,18 +13,21 @@ class UserManagementSystem
         EmailAddress = "";
     }
 
-    public UserManagementSystem(int userid, string fullname, string emailaddress, int phonenumber)
+    public UserManagementSystem(int userid, string fullname, string emailaddress, int phonenumber, bool passwordactive)
     {
         UserId = userid;
         FullName = fullname;
         EmailAddress = emailaddress;
         PhoneNumber = phonenumber;
+        PasswordActive = passwordactive;
+
     }
+
 
 
     public override string ToString()
     {
-        return $"userid : {UserId}, fullname : {FullName}, emailaddress : {EmailAddress}, phonenumber : {PhoneNumber}";
+        return $"userid : {UserId}, fullname : {FullName}, emailaddress : {EmailAddress}, phonenumber : {PhoneNumber}, passwordactive : {PasswordActive}";
     }
 
 }
