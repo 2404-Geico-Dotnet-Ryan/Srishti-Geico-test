@@ -1,0 +1,6 @@
+class UserStorage
+{
+    //Temporary setup
+
+    
+}
