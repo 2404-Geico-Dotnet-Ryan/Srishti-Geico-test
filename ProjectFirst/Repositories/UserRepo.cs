@@ -5,7 +5,7 @@ class UserRepo
 
 UserStorage userStorage = new();
 
-public UserManagementSystem AddUser(UserManagementSystem u)
+public UserAccount AddUser(UserAccount u)
 {
     u.UserId = userStorage.idCounter++;
 
@@ -13,7 +13,7 @@ public UserManagementSystem AddUser(UserManagementSystem u)
     return u;
 }
 
-public UserManagementSystem? GetUser(int userid)
+public UserAccount? GetUser(int userid)
 {
     if(userStorage.users.ContainsKey(userid))
     {
@@ -27,7 +27,7 @@ public UserManagementSystem? GetUser(int userid)
 }
 
 
- public UserManagementSystem? UpdateUser(UserManagementSystem updatedUser)
+ public UserAccount? UpdateUser(UserAccount updatedUser)
  {
     try
     {
@@ -43,7 +43,7 @@ public UserManagementSystem? GetUser(int userid)
 
  }
 
- public UserManagementSystem? DeleteUser(UserManagementSystem us)
+ public UserAccount? DeleteUser(UserAccount us)
     {
         //If we have the ID -> then simply Remove it from storage
         bool didRemove = userStorage.users.Remove(us.UserId);
