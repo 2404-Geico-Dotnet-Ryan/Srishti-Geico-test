@@ -1,0 +1,15 @@
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\bin\Debug\net8.0\ProjectFirst.exe
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\bin\Debug\net8.0\ProjectFirst.deps.json
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\bin\Debug\net8.0\ProjectFirst.runtimeconfig.json
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\bin\Debug\net8.0\ProjectFirst.dll
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\bin\Debug\net8.0\ProjectFirst.pdb
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.AssemblyInfoInputs.cache
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.AssemblyInfo.cs
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.csproj.CoreCompileInputs.cache
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.sourcelink.json
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.dll
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\refint\ProjectFirst.dll
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.pdb
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ProjectFirst.genruntimeconfig.cache
+C:\Users\A214163\Documents\RevatureTraining\Srishti-Geico-test\ProjectFirst\obj\Debug\net8.0\ref\ProjectFirst.dll
