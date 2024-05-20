@@ -3,10 +3,8 @@ class EmployeeService
     /*
         Services:
             -view password expiration date
-            -Reset Password
-            
+            -Reset Password    
     */
-
     EmployeeRepo er = new(); //employeeService needs to access the repo layer so we are adding here
 
     //let's write out some methods..//don't think about UI in this layer...//only processes /action that is happening
@@ -27,7 +25,6 @@ class EmployeeService
     }
 
 
-
     public List<Employee> GetEmployees()
     {
         List<Employee> allEmployees = er.GetAllEmployees();
@@ -36,33 +33,7 @@ class EmployeeService
     }
 
    
-   /*
-    public void ResetPassword()
-    {
-        if (IsPasswordExpired().Equals true)
-        {
-             System.Console.WriteLine();
-        }
-       
-    }
-*/
-
-    
-    
-    public static bool IsPasswordActive(DateTime lastpasswordchangeddate )
-    {
-       int passwordExpirationDays = 90;
-
-        //calculate the expiration date
-       DateTime expirationDate = lastpasswordchangeddate.AddDays(passwordExpirationDays);
-
-        // Compare with the current date
-       return DateTime.Now < expirationDate;
-    }
-
-
-    
-    
+     
     public bool IsPasswordExpired(DateTime lastpasswordchangeddate)
     {
         int passwordExpirationDays = 90;
@@ -72,6 +43,17 @@ class EmployeeService
 
         // Compare with the current date
        return DateTime.Now > expirationDate;
+    }
+
+  //Ew, a Trivial Service!
+    public Employee? GetEmployee(int id)
+    {
+        return er.GetEmployee(id);
+    }
+
+ public Employee? UpdateEmployee(Employee e)
+    {
+        return er.UpdateEmployee(e);
     }
 
 }

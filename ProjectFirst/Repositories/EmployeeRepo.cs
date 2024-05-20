@@ -2,32 +2,30 @@ using System;
 class EmployeeRepo
 {
     // CRUD operations
+    EmployeeStorage employeeStorage = new();
 
-EmployeeStorage employeeStorage = new();
-
-public Employee AddEmployee(Employee e)
-{
-    e.EmployeeId = employeeStorage.idCounter++;
-
-    employeeStorage.employees.Add(e.EmployeeId, e);
-    return e;
-}
-
-public Employee? GetEmployee(int employeeid)
-{
-    if(employeeStorage.employees.ContainsKey(employeeid))
+    public Employee AddEmployee(Employee e)
     {
-        return employeeStorage.employees[employeeid];   
+        e.EmployeeId = employeeStorage.idCounter++;
+
+        employeeStorage.employees.Add(e.EmployeeId, e);
+        return e;
     }
-    else
+
+    public Employee? GetEmployee(int employeeid)
     {
-        System.Console.WriteLine("Invalid Employee ID - Please Try Again");
-        return null;
+        if (employeeStorage.employees.ContainsKey(employeeid))
+        {
+            return employeeStorage.employees[employeeid];
+        }
+        else
+        {
+            System.Console.WriteLine("Invalid Employee ID - Please Try Again");
+            return null;
+        }
     }
-}
 
-
- //THIS IS A NEW METHOD!
+    //THIS IS A NEW METHOD!
     //No Parameters because...get everything is get everything. No options to choose.
     public List<Employee> GetAllEmployees()
     {
@@ -36,25 +34,22 @@ public Employee? GetEmployee(int employeeid)
         return employeeStorage.employees.Values.ToList();
     }
 
-
-
- public Employee? UpdateEmployee(Employee updatedEmployee)
- {
-    try
+    public Employee? UpdateEmployee(Employee updatedEmployee)
     {
-        employeeStorage.employees[updatedEmployee.EmployeeId] = updatedEmployee;
-        return updatedEmployee;
-    }
-    catch (Exception)
-    {
-        
-        System.Console.WriteLine("Invalid Employee ID - Please Try Again");
-        return null;
+        try
+        {
+            employeeStorage.employees[updatedEmployee.EmployeeId] = updatedEmployee;
+            return updatedEmployee;
+        }
+        catch (Exception)
+        {
+            System.Console.WriteLine("Invalid Employee ID - Please Try Again");
+            return null;
+        }
+
     }
 
- }
-
- public Employee? DeleteEmployee(Employee de)
+    public Employee? DeleteEmployee(Employee de)
     {
         //If we have the ID -> then simply Remove it from storage
         bool didRemove = employeeStorage.employees.Remove(de.EmployeeId);
@@ -71,9 +66,5 @@ public Employee? GetEmployee(int employeeid)
             return null;
         }
     }
-
-
-
-
 
 }
