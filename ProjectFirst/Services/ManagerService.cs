@@ -1,6 +1,11 @@
 class ManagerService
 {
-    ManagerRepo mr = new();
+    ManagerRepo mr;
+
+        public ManagerService(ManagerRepo mr)
+    {
+        this.mr = mr;
+    }
 
     //Register
     public Manager? Register(Manager mg)
@@ -13,9 +18,9 @@ class ManagerService
             return null;
         }
 
-        //let's not let them register if the Managername is already taken! :o
+        //let's not let them register if the Username is already taken! :o
         //Get all managers
-        List<Manager> allManagers = mr.GetAllManagers();
+        List<Manager> allManagers = mr.GetAllManagers() ?? []; //adding ?? [] repairs Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
         //Check if our new Managername matches any of the Managernames on all those Managers.
         foreach (Manager manager in allManagers)
         {
@@ -31,24 +36,24 @@ class ManagerService
     }
 
     //Login
-    public Manager? Login(string Managername, string password)
+    public Manager? Login(string username, string password)
     {
         //Get all Managers
-        List<Manager> allManagers = mr.GetAllManagers();
+        List<Manager> allManagers = mr.GetAllManagers() ?? []; //adding ?? [] repairs Unhandled exception. System.NullReferenceException: Object reference not set to an instance of an object.
 
         //check each one to see if we find a match.
-        foreach (Manager Manager in allManagers)
+        foreach (Manager manager in allManagers)
         {
             //If matching Managername and password, they 'login' -> return that Manager
-            if (Manager.Username == Managername && Manager.Password == password)
+            if (manager.Username == username && manager.Password == password)
             {
                 //Yay! Login!
-                return Manager; //us returning the Manager will indicate success.
+                return manager; //us returning the Manager will indicate success.
             }
         }
 
         //If we make it this far - we didnt find a match! Oh no!
-        System.Console.WriteLine("Invalid Managernamd / Password combo! Please Try Again!");
+        System.Console.WriteLine("Invalid Username / Password combo! Please Try Again!");
         return null; //reject the login
     }
 }

@@ -5,10 +5,15 @@ class EmployeeService
             -view password expiration date
             -Reset Password    
     */
-    EmployeeRepo er = new(); //employeeService needs to access the repo layer so we are adding here
+    EmployeeRepo er; //employeeService needs to access the repo layer so we are adding here
 
     //let's write out some methods..//don't think about UI in this layer...//only processes /action that is happening
 
+     public EmployeeService(EmployeeRepo er)
+    {
+        this.er = er;
+    }
+ 
     public void ViewPasswordExpirationDate(DateTime lastPasswordChangedDate)
     {
         int passwordExpirationDays = 90;
@@ -28,32 +33,45 @@ class EmployeeService
     public List<Employee> GetEmployees()
     {
         List<Employee> allEmployees = er.GetAllEmployees();
-       return allEmployees;
+        return allEmployees;
 
     }
 
-   
-     
+
+
     public bool IsPasswordExpired(DateTime lastpasswordchangeddate)
     {
         int passwordExpirationDays = 90;
 
         //calculate the expiration date
-       DateTime expirationDate = lastpasswordchangeddate.AddDays(passwordExpirationDays);
+        DateTime expirationDate = lastpasswordchangeddate.AddDays(passwordExpirationDays);
 
         // Compare with the current date
-       return DateTime.Now > expirationDate;
+        return DateTime.Now > expirationDate;
     }
 
-  //Ew, a Trivial Service!
+    //Ew, a Trivial Service!
     public Employee? GetEmployee(int id)
     {
         return er.GetEmployee(id);
     }
 
- public Employee? UpdateEmployee(Employee e)
+    public Employee? UpdateEmployee(Employee e)
     {
         return er.UpdateEmployee(e);
     }
+
+
+    /***********************************************/
+    /* Method Name - AddEmployee                       */
+    /* Inputs      - employee                          */
+    /* Returns     - Newly Added employee              */
+    /***********************************************/
+    public Employee? AddEmployee(Employee e)
+    {
+
+        return er.AddEmployee(e);
+    }
+
 
 }

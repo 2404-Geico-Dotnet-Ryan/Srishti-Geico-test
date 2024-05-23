@@ -10,6 +10,8 @@ class Employee
     public DateTime PasswordExpirationDate { get; set;}
     public bool PasswordActive { get; set;}
 
+    public int ManagerId { get; set;}
+
     public Employee()
     {
         EmployeeName = "";
@@ -17,7 +19,7 @@ class Employee
         PhoneNumber = "";
     }
 
-    public Employee(int employeeid, string employeename, string emailaddress, string phonenumber, DateTime lastpasswordchangeddate, DateTime passwordexpirationdate, bool passwordactive)
+    public Employee(int employeeid, string employeename, string emailaddress, string phonenumber, DateTime lastpasswordchangeddate, DateTime passwordexpirationdate, bool passwordactive, int managerId)
     {
         EmployeeId = employeeid;
         EmployeeName = employeename;
@@ -26,11 +28,12 @@ class Employee
         LastPasswordChangedDate = lastpasswordchangeddate;
         PasswordExpirationDate = passwordexpirationdate;
         PasswordActive = passwordactive;
+       ManagerId = managerId;
     }
 
     public override string ToString()
     {
-        return $"employeeid: {EmployeeId}, employeename: {EmployeeName}, emailaddress: {EmailAddress}, phonenumber: {PhoneNumber}, lastpasswordchangeddate: {LastPasswordChangedDate}, passwordexpirationdate: {PasswordExpirationDate}, passwordactive : {PasswordActive}";
+        return $"employeeid: {EmployeeId}, employeename: {EmployeeName}, emailaddress: {EmailAddress}, phonenumber: {PhoneNumber}, lastpasswordchangeddate: {LastPasswordChangedDate}, passwordexpirationdate: {PasswordExpirationDate}, passwordactive : {PasswordActive}, managerid: {ManagerId}";
     }
 
 }

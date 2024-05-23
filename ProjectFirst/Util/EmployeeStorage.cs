@@ -11,10 +11,10 @@ class EmployeeStorage
     public EmployeeStorage()
     {   
         //creating some employee objects - employee1, employee2 etc..
-        Employee employee1 = new(idCounter, "JBond", "jbond@test.com", "444-444-4444", DateTime.Now.AddDays(-45), DateTime.Now.AddDays(45), true); idCounter++;
-        Employee employee2 = new(idCounter, "HPotter", "hpotter@test.com", "111-111-1111", DateTime.Now.AddDays(-100),DateTime.Now.AddDays(-5), false); idCounter++;
-        Employee employee3 = new(idCounter, "AReed", "areed@test.com", "444-333-4444", DateTime.Now.AddDays(-45),DateTime.Now.AddDays(45), true); idCounter++;
-        Employee employee4 = new(idCounter, "SFord", "sford@test.com", "333-444-3333", DateTime.Now.AddDays(-45), DateTime.Now.AddDays(1), true); idCounter++;
+        Employee employee1 = new(idCounter, "JBond", "jbond@test.com", "444-444-4444", DateTime.Now.AddDays(-45), DateTime.Now.AddDays(45), true,1); idCounter++;
+        Employee employee2 = new(idCounter, "HPotter", "hpotter@test.com", "111-111-1111", DateTime.Now.AddDays(-100),DateTime.Now.AddDays(-5), false,1); idCounter++;
+        Employee employee3 = new(idCounter, "AReed", "areed@test.com", "444-333-4444", DateTime.Now.AddDays(-45),DateTime.Now.AddDays(45), true,1); idCounter++;
+        Employee employee4 = new(idCounter, "SFord", "sford@test.com", "333-444-3333", DateTime.Now.AddDays(-45), DateTime.Now.AddDays(1), true,1); idCounter++;
 
     //Add the new employee objects to the dictionary
         employees = [];
